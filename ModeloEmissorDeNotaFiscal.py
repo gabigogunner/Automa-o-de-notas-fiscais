@@ -105,7 +105,7 @@ class Pessoa:
 
             input("Pressione ENTER no terminal do PyCharm para encerrar...")
 
-meu_usuario = Pessoa("000.000.000-000",
+meu_usuario = Pessoa("000.000.000-00",
                      "Sua senha do GOV",
                      "000000",
                      "0000,00",
