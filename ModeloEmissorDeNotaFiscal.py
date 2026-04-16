@@ -51,7 +51,9 @@ class Pessoa:
             pagina.locator("#password").fill(self.senha)
             pagina.locator("#submit-button").click()
             pagina.wait_for_load_state("networkidle")
-            pagina.locator("#gdd-close-hint").click()
+            aviso = pagina.locator("#gdd-close-hint")
+            if aviso.is_visible(timeout=5000):  # Espera até 5 segundos
+                aviso.click()
             pagina.locator("#otpInput").fill(self.codigo)
             pagina.locator("#enter-offline-2fa-code").click()
             pagina.wait_for_load_state("networkidle")
@@ -112,6 +114,5 @@ meu_usuario = Pessoa("000.000.000-00",
                      "Descrição do seu serviço prestado",
                      "1",
                      "00.000.000/0000-00")
-
 
 meu_usuario.automacao()
